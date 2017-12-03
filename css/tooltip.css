@@ -1,0 +1,15 @@
+.ttpShow {
+  display: none;
+}
+
+/*表示するツールチップ部分*/
+#ttpPanel {
+  background: #fff;
+  border: #ccc 3px solid;
+  display: none;
+  padding: 15px;
+  position: absolute;
+  text-align: left;
+  width: 200px;
+  z-index: 99;
+}
