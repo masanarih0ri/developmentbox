@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+body {
+  background: black;
+}
+
+
+.snow {
+  /*雪の色*/
+  color: snow;
+  /*雪の大きさ*/
+  font-size: 18px;
+  /*初期位置*/
+  position: fixed;
+  top: -5%;
+  /*雪そのものを幅に適当な幅で降らせる*/
+  text-shadow:
+  5vw   -200px 0,
+  10vw  -400px 0,
+  20vw  -500px 0,
+  30vw  -580px 0,
+  39vw  -250px 0,
+  42vw  -340px 0,
+  56vw  -150px 0,
+  63vw  -180px 0,
+  78vw  -220px 0,
+  86vw  -320px 0,
+  94vw  -170px 0;
+
+  /*アニメーションさせる*/
+  animation: anim 5s linear infinite;
+}
+
+@keyframes anim {
+  100% {
+    color: transparent;
+    top: 150%;
+  }
+}
