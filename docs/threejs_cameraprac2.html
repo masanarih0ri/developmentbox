@@ -1,0 +1,100 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
+  <script>
+    // ページの読み込みを待つ
+    window.addEventListener('load', init);
+
+    function init() {
+      //サイズを調整
+      const width = 960;
+      const height = 540;
+      let rot = 0; //角度
+      let mouseX = 0; //マウス座標
+
+      //レンダラーを作成
+      const renderer = new THREE.WebGLRenderer({
+        canvas: document.querySelector("#myCanvas")
+      });
+      renderer.setSize(width, height);
+
+      //シーンを作成
+      const scene = new THREE.Scene();
+      //カメラを作成
+      const camera = new THREE.PerspectiveCamera(45, width / height);
+      //平行光源を作成
+      const directionalLight = new THREE.DirectionalLight(0xFFFFFF);
+      directionalLight.position.set(1, 1, 1);
+      scene.add(directionalLight);
+      //マテリアルを作成
+      const material = new THREE.MeshPhongMaterial({
+        map: new THREE.TextureLoader().load('images/earthmap1k.jpg'),
+        side: THREE.DoubleSide
+      });
+      //球体の形状を作成
+      const geometry = new THREE.SphereGeometry(300, 30, 30);
+      //形状とマテリアルからメッシュを作成
+      const earthmesh = new THREE.Mesh(geometry, material);
+      //シーンにメッシュを追加
+      scene.add(earthmesh);
+
+      //星屑を作成
+      createStarField();
+
+      function createStarField() {
+        //形状データを作成
+        const geometry = new THREE.Geometry();
+        for(let i = 0; i < 1000; i++) {
+          geometry.vertices.push(new THREE.Vector3(
+            3000 * (Math.random() - 0.5),
+            3000 * (Math.random() - 0.5),
+            3000 * (Math.random() - 0.5)
+          ));
+        }
+        //マテリアルを作成
+        const material = new THREE.PointsMaterial({
+          size: 10,
+          color: 0xFFFFFF
+        });
+        //星屑を作成
+        const mesh = new THREE.Points(geometry, material);
+        //シーンに追加
+        scene.add(mesh);
+      }
+
+      //マウスが動いた時の動きを取得
+      document.addEventListener('mousemove', (event) => {
+        mouseX = event.pageX;
+      });
+      tick();
+
+      function tick() {
+        //マウスの位置に応じて角度を設定
+        const targetRot = (mouseX / window.innerWidth) * 360;
+        //イージングの公式を用いて滑らかにする
+        //値 += (目標値 - 現在の値) * 減速値
+        rot += (targetRot - rot) * 0.02;
+
+        //ラジアンに変換
+        const radian = rot * Math.PI / 100;
+        //角度に応じてカメラの位置をセテち
+        camera.position.x = 1000 * Math.sin(radian);
+        camera.position.z = 1000 * Math.cos(radian);
+        //原点方向をみる
+        camera.lookAt(new THREE.Vector3(0, 0, 0));
+        //地球の回転を加える
+        earthmesh.rotation.y += 0.01;
+        //レンダリング
+        renderer.render(scene, camera);
+        requestAnimationFrame(tick);
+
+      }
+    }
+
+  </script>
+</head>
+<body>
+  <canvas id="myCanvas"></canvas>
+</body>
+</html>
