@@ -20,15 +20,29 @@ function asyncProcess(value) {
   });
 }
 
-// var result = 'サンプル';
+const first = '一つ目の処理';
+const second = '二つ目の処理';
+const third = '三つ目の処理';
 
-asyncProcess('サンプル')
+asyncProcess(first)
 .then(
-  //成功した時の処理
+  response => {
+    console.log(response);
+    //初回の実行に成功したら2回目のasyncProcessを実行
+    return asyncProcess(second);
+  }
+)
+.then(
+  response => {
+    console.log(response);
+    //3回目の処理
+    return asyncProcess(third);
+  }
+)
+.then(
   response => {
     console.log(response);
   },
-  //失敗した時の処理
   error => {
     console.log(`エラー：${error}`);
   }
