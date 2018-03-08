@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!--ここにHTMLを記載する-->
+  <div class="js-component01">
+    <p>mustache構文の出力は</p>
+    <p>v-textの出力を表示します： <span v-text="text"></span></p>
+
+  </div>
+
+  <div class="js-component02">
+    <p><input v-model="text" type="text"></p>
+    <p>ここに入力文字列を表示します：{{ text }}</p>
+  </div>
+
+  <div class="js-component03">
+    <p><input v-model="input" type="text"></p>
+    <p v-on:Click="output" style="background:#ff0000;color:#fff;width:20%;;">入力文字列を反映</p>
+    <p>ここに入力文字列を表示： {{ text }}</p>
+  </div>
+  <script src="./js/vue.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
