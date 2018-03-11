@@ -9,3 +9,29 @@ body {
   margin: 0 auto;
   width: 90%;
 }
+
+
+.columns-wrapper {
+  overflow: hidden;
+  /* position: relative; */
+}
+
+.column-left {
+  background: #ff0000;
+  float: left;
+  left: 0;
+  position: fixed;
+  width: 20%;
+}
+
+.column-right {
+  float: left;
+  /* left: 3%; */
+  margin-left: 20%;
+  /* position: absolute; */
+  width: 80%;
+}
+
+.cr-title h2 {
+  font-weight: normal;
+}
