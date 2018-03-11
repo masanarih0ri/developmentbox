@@ -13,6 +13,9 @@ this.addEventListener('install', event => {
     .then(function(cache){
       return cache.addAll([
         './img/offline.png',
+        './css/style.css',
+        './js/jquery-3.3.1.min.js',
+        './js/offline.js',
         offlineUrl
       ]);
     })
