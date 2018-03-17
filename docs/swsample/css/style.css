@@ -1,11 +1,12 @@
 body {
   font-family: sans-serif;
   font-size: 1.25em;
-  margin: 3em 3em 0 3em;
+  margin: 0;
 }
 
 .offline-caution {
   display: none;
+  text-align: center;
   margin: 0 auto;
   width: 90%;
 }
@@ -17,21 +18,104 @@ body {
 }
 
 .column-left {
-  background: #ff0000;
   float: left;
+  padding: 2%;
+  position: static;
+  width: 25%;
+  /* top: 15%;
+  left: 0;
+  position: fixed; */
+}
+
+.side-nav-fixed {
+  top: 0;
   left: 0;
   position: fixed;
-  width: 20%;
+}
+
+.main-fixed {
+  padding-left: 29%;
 }
 
 .column-right {
   float: left;
-  /* left: 3%; */
-  margin-left: 20%;
-  /* position: absolute; */
-  width: 80%;
+  padding-top: 2%;
+  width: 71%;
 }
 
+.stock-box {
+  border: 1px solid #e0e0e0;
+  margin: 2%;
+  padding: 2%;
+  width: 60%;
+}
+
+.box-one {
+  border-left: 4px solid #FB3C02;
+}
+
+.box-two {
+  border-left: 4px solid #26610F;
+}
+
+.box-three {
+  border-left: 4px solid #1853B5;
+}
+
+.box-four {
+  border-left: 4px solid #E6B422;
+}
+
+.cr-talk {
+  padding: 1%;
+}
+
+.cr-talk .sub-title {
+  border-left: 3px solid #000080;
+  padding-left: 6px;
+}
+
+.cr-talk p {
+  font-size: 16px;
+}
+
+.cr-talk .per,
+.cr-talk .pbr {
+  color: #000080;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
 .cr-title h2 {
+  background: #000080;
+  color: #f5f5f5;
   font-weight: normal;
+  text-align: center;
+}
+
+.cr-talk .graham-number {
+  border-bottom: 1px solid #000080;
+  display: inline;
+  font-size: 24px;
+}
+
+.cr-speaker-one {
+  color: #FB3C02;
+  font-weight: bold;
+}
+
+.cr-speaker-two {
+  color: #26610F;
+  font-weight: bold;
+}
+
+.cr-speaker-three {
+  color: #1853B5;
+  font-weight: bold;
+}
+
+.cr-speaker-four {
+  color: #E6B422;
+  font-weight: bold;
 }

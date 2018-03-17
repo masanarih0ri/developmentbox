@@ -14,7 +14,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,8 +34,16 @@ limitations under the License.
     <!-- カラム全体start -->
     <div class="columns-wrapper">
       <!-- 左カラム全体start -->
-      <div class="column-left">
+      <div class="column-left" id="side-nav">
         <!-- 左カラムのタイトル&テキストリンクstart -->
+        <div class="cl-heading">
+          <h3>グレアム係数とは？</h3>
+          <a href="#contents-one">PER×PBRで割安な株を<br>探し出してみよう</a href="#contents-one">
+        </div>
+        <div class="cl-heading">
+          <h3>グレアム係数とは？</h3>
+          <a href="#contents-one">PER×PBRで割安な株を<br>探し出してみよう</a href="#contents-one">
+        </div>
         <div class="cl-heading">
           <h3>グレアム係数とは？</h3>
           <a href="#contents-one">PER×PBRで割安な株を<br>探し出してみよう</a href="#contents-one">
@@ -44,7 +52,7 @@ limitations under the License.
       </div>
       <!-- 左カラム全体end -->
       <!-- 右カラム全体start -->
-      <div class="column-right">
+      <div class="column-right" id="main">
         <!-- 一つ目のコンテンツstart -->
         <div id="contents-one">
           <div class="cr-title">
@@ -59,28 +67,44 @@ limitations under the License.
             <p>みなさんこんにちは。本日のコラムは、株式投資の初心者が必ず通る道、すなわち「どの銘柄を買えばいいの？」という疑問に対して一つの指標となる、グレアム係数というものをご紹介したいと思います。</p>
 
             <h4 class="sub-title">グレアム係数って？</h4>
-            <p>そもそも、グレアム係数とは何でしょうか？難しい話はあまりしたくないので簡潔にお話をさせていただくと・・・</p>
+            <p>そもそも、グレアム係数とは何でしょうか？難しい話はあまりしたくないので簡潔にお話をさせていただくと</p>
+            <p class="graham-number">PER×PBR < 22.5</p>
+            <p>この数値を一つの目安として購入を検討してみましょう。という一つの指標です。</p>
+            <p>少し具体的に説明すると</p>
+            <p><span class="per">PER（株価収益率）</span>＝1株当たり利益に対し、株価が何倍まで買われているかを表したものです。</p>
+            <p>計算式は時価総額÷純利益。つまり純利益が増えればPERは下がるし、時価総額が上がればPERは上がります。一般的にはPERは低い方が割安な株であると言えますが、PERが低いというだけで株を買うのは少し危険です。</p>
+            <p><span class="pbr">PBR（株価純資産倍率）</span>＝株当たり純資産の何倍の値段が付けられているかを見る投資尺度です。</p>
+            <p>計算式は株価÷BPS（1株あたりの株主資本）。つまり株価が下がればPBRは下がるし、資産が減るとPBRは上がります。こちらはPBRが1程度だと割安だと言われますが、その他の財務分析もしっかりとした上で株を買いましょう。
+            </p>
             <p>では、その指標を使って代表的な銘柄を見てみましょう。</p>
-            <span class="cr-spreaker-one">ソフトバンク</span>
-            <p>PER:</p>
-            <p>PBR:</p>
-            <p>グレアム係数:</p>
-            <p>グレアム係数はとなっていて・・・別の銘柄も見てみましょう</p>
-            <span class="cr-spreaker-two">ヤフー</span>
-            <p>PER:</p>
-            <p>PBR:</p>
-            <p>グレアム係数:</p>
-            <p>グレアム係数はとなっていて・・・別の銘柄も見てみましょう</p>
-            <span class="cr-spreaker-three">マネーフォワード</span>
-            <p>PER:</p>
-            <p>PBR:</p>
-            <p>グレアム係数:</p>
-            <p>グレアム係数はとなっていて・・・ちょっと別の銘柄も見てみましょう</p>
-            <span class="cr-spreaker-three">第一交通</span>
-            <p>PER:</p>
-            <p>PBR:</p>
-            <p>グレアム係数:</p>
-            <p>買いですね！（実際に買ってみました。）</p>
+            <div class="stock-box box-one">
+              <span class="cr-speaker-one">ソフトバンク</span>
+              <p>PER:7.80倍</p>
+              <p>PBR:1.71倍</p>
+              <p>グレアム係数:</p>
+              <p>グレアム係数は13.338となっていて・・・別の銘柄も見てみましょう</p>
+            </div>
+            <div class="stock-box box-two">
+              <span class="cr-speaker-two">ヤフー</span>
+              <p>PER:24.80倍</p>
+              <p>PBR:3.02倍</p>
+              <p>グレアム係数:74.896</p>
+              <p>グレアム係数は74.896となっていて・・・</p>
+            </div>
+            <div class="stock-box box-three">
+              <span class="cr-speaker-three">クックパッド</span>
+              <p>PER:17.80倍</p>
+              <p>PBR:2.66倍</p>
+              <p>グレアム係数:47.348</p>
+              <p>グレアム係数は47.348となっていて・・・</p>
+            </div>
+            <div class="stock-box box-four">
+              <span class="cr-speaker-four">第一交通産業</span>
+              <p>PER:7.70倍</p>
+              <p>PBR:0.83倍</p>
+              <p>グレアム係数:6.391</p>
+              <p>買いですね！（実際に買ってみました。）</p>
+            </div>
           </div>
           <div class="dr-profile">
             <div class="dr-prof-image">
