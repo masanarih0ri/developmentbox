@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.slideshow {
+  min-width: 960px;
+  height: 465px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slideshow img {
+  display: none;
+  left: 50%;
+  margin-left: -800px;
+  position: absolute;
+}
+
+.slideshow img:first-child {
+  display: block;
+}
